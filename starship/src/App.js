@@ -1,23 +1,25 @@
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-function App() {
+import StarshipList from "./components/starshipList"
+import StarshipDetail from "./components/starshipDetail"
+
+const NotFoundRoute = () => <div>404 Page</div>;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={StarshipList} />
+        <Route
+          exact
+          path="/starship/:index"
+          component={StarshipDetail}
+        />
+        <Route component={NotFoundRoute} />
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;

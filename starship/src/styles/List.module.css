@@ -1,0 +1,16 @@
+.itemWrapper {
+  margin: 20px;
+  display: block;
+  min-height: 100vh;
+}
+
+.linkWrapper {
+  width: 400px;
+  height: 50px;
+  background-color: yellow;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
